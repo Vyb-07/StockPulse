@@ -6,7 +6,7 @@ from firebase_admin import auth
 
 
 cred = credentials.Certificate("stockpulse-b1818-afca9e4f09d8.json")
-#firebase_admin.initialize_app(cred)
+firebase_admin.initialize_app(cred)
 
 
 def app():
