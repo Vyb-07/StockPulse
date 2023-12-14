@@ -13,7 +13,6 @@ cffi==1.16.0
 charset-normalizer==3.3.2
 click==8.1.7
 cmdstanpy==1.2.0
-colorama==0.4.6
 colorlover==0.3.0
 comm==0.2.0
 contourpy==1.2.0
@@ -21,7 +20,7 @@ cryptography==41.0.7
 cufflinks==0.17.3
 cycler==0.12.1
 decorator==5.1.1
-dm-tree==0.1.8
+exceptiongroup==1.2.0
 executing==2.0.1
 firebase-admin==6.3.0
 flatbuffers==23.5.26
@@ -72,7 +71,6 @@ mdurl==0.1.2
 ml-dtypes==0.2.0
 msgpack==1.0.7
 multitasking==0.0.11
-namex==0.0.7
 numpy==1.26.2
 oauthlib==3.2.2
 opt-einsum==3.3.0
@@ -81,12 +79,14 @@ pandas==2.1.4
 pandas-datareader==0.10.0
 parso==0.8.3
 peewee==3.17.0
+pexpect==4.9.0
 Pillow==10.1.0
 plotly==5.18.0
 prompt-toolkit==3.0.43
 prophet==1.1.5
 proto-plus==1.23.0
 protobuf==4.23.4
+ptyprocess==0.7.0
 pure-eval==0.2.2
 pyarrow==14.0.1
 pyasn1==0.5.1
@@ -118,8 +118,8 @@ tensorboard==2.15.1
 tensorboard-data-server==0.7.2
 tensorflow==2.15.0
 tensorflow-estimator==2.15.0
-tensorflow-intel==2.15.0
-tensorflow-io-gcs-filesystem==0.31.0
+tensorflow-io-gcs-filesystem==0.34.0
+tensorflow-macos==2.15.0
 termcolor==2.4.0
 threadpoolctl==3.2.0
 toml==0.10.2
@@ -133,7 +133,6 @@ tzlocal==5.2
 uritemplate==4.1.1
 urllib3==2.1.0
 validators==0.22.0
-watchdog==3.0.0
 wcwidth==0.2.12
 webencodings==0.5.1
 Werkzeug==3.0.1

@@ -4,9 +4,6 @@ from streamlit_option_menu import option_menu
 
 
 import Home, Account, Display, Predict, DeepPrediction, Watchlist
-st.set_page_config(
-        page_title="StockPulse",
-)
 
 
 

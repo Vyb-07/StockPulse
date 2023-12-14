@@ -74,3 +74,69 @@ def app():
     
     if __name__ == "__main__":
         main()
+import streamlit as st
+
+import yfinance as yf
+
+import datetime
+ 
+def app():
+    st.title('StockPulse - Stock Market Analysis')
+
+    st.markdown(
+
+        "Welcome to StockPulse - Your Stock Market Analysis App! "
+
+        "Enter a stock symbol in the sidebar to get started."
+
+    )
+    
+    # Sidebar for user input
+
+    symbol = st.sidebar.text_input('Enter Stock Symbol', value='AAPL')
+    
+    # Display stock information
+
+    if st.sidebar.button('Get Stock Info'):
+
+        if symbol:
+
+            st.write(f"Displaying information for stock symbol: {symbol}")
+    
+            # Fetching stock data using yfinance
+
+            stock_data = yf.Ticker(symbol)
+
+            today = datetime.date.today()
+
+            one_year_ago = today - datetime.timedelta(days=365)
+
+            df = stock_data.history(start=one_year_ago, end=today)
+    
+            # Displaying historical stock data
+
+            st.subheader(f"{symbol} Stock Data")
+
+            st.write(df.head())
+    
+            # Line chart for stock prices
+
+            st.subheader(f"{symbol} Stock Price Chart")
+
+            st.line_chart(df['Close'])
+    
+            # More details about the company
+
+            info = stock_data.info
+
+            st.subheader(f"{symbol} Company Information")
+
+            st.write(f"**Company Name:** {info['longName']}")
+
+            st.write(f"**Market Cap:** {info['marketCap']}")
+
+            st.write(f"**Website:** {info['website']}")
+
+        else:
+
+            st.warning('Please enter a stock symbol.')
