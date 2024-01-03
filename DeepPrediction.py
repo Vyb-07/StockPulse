@@ -60,7 +60,7 @@ def app():
         y_train.append(data_training_array[i, 0])
     x_train, y_train = np.array(x_train), np.array(y_train)
 
-    model = load_model(r'/Users/vyb/Documents/coding/Stockpulse/keras_model.h5') #update with keras file location
+    model = load_model(r'C:\Users\vaibhav_gudali\Desktop\MAIN PROJECT\Stockpulse\keras_model.h5') #update with keras file location
 
     #Testing Part
     past_100_days = data_training.tail(100)

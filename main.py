@@ -7,6 +7,7 @@ import Home, Account, Display, Predict, DeepPrediction, Watchlist
 
 
 
+
 class MultiApp:
 
     def __init__(self):
@@ -19,21 +20,14 @@ class MultiApp:
             "function": func
         })
 
-    def run():
-        # app = st.sidebar(
-        with st.sidebar:        
-            app = option_menu(
-                menu_title='Stock Pulse ',
-                options=['Home','Account','Display','Predict','DeepPrediction','Watchlist'],
-                menu_icon='chat-text-fill',
-                default_index=1,
-                styles={
-                    "container": {"padding": "3!important","background-color":'#1f1f1f'},
-        "icon": {"color": "#144c7b", "font-size": "14px"}, 
-        "nav-link": {"color":"white","font-size": "12px", "text-align": "left", "margin":"0px", "--hover-color": "#005eb8"},
-        "nav-link-selected": {"background-color": "#02ab21"},}
-                
-                )
+    def run():       
+        app = option_menu(
+            menu_title=None,
+            options=['Home','Account','Display','Predict I','Prediction','Watchlist'],
+            default_index=1,
+            orientation="horizontal",
+            
+            )
 
         
         if app == "Home":
@@ -42,9 +36,9 @@ class MultiApp:
             Account.app()    
         if app == "Display":
             Display.app()        
-        if app == 'Predict':
+        if app == 'Predict I':
             Predict.app()
-        if app == 'DeepPrediction':
+        if app == 'Prediction':
             DeepPrediction.app() 
         if app == 'Watchlist':
             Watchlist.app()   
