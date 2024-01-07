@@ -5,7 +5,7 @@ from firebase_admin import credentials
 from firebase_admin import auth
 
 
-cred = credentials.Certificate("stockpulse-b1818-afca9e4f09d8.json")
+cred = credentials.Certificate("Insert Google-api-key.json")
 firebase_admin.initialize_app(cred)
 
 
