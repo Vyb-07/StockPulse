@@ -63,6 +63,20 @@ Before you begin, ensure you have the following installed:
     model = load_model('keras_model.h5')
     ```
 
+6.  **Security & Configuration**
+    To run the application, you must provide Firebase credentials via an environment variable to ensure security.
+    *   **Get your credentials**: Open your `stockpulse-b1818-afca9e4f09d8.json` (or whichever service account file you downloaded).
+    *   **Minify the JSON**: Convert the multi-line JSON into a single line string. You can use a tool like `jq -c . stockpulse-b1818-afca9e4f09d8.json` or an online minifier.
+    *   **Set the environment variable**:
+        ```bash
+        export FIREBASE_CREDENTIALS='{"type": "service_account", "project_id": "..."}'
+        ```
+    *   **Run the app**:
+        ```bash
+        streamlit run main.py
+        ```
+    *   **Note**: Ensure `*.json` files containing secrets are NOT committed to Git.
+
 ## ▶️ Usage
 
 Run the main application using Streamlit:

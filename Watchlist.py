@@ -3,10 +3,19 @@ import firebase_admin
 from firebase_admin import firestore, credentials, auth
 import yfinance as yf
 import plotly.graph_objects as go
+import os
+import json
 def app():
     # Initialize Firebase
-    cred = credentials.Certificate("stockpulse-b1818-afca9e4f09d8.json")
-    #firebase_admin.initialize_app(cred)
+    # Initialize Firebase if not already initialized
+    if not firebase_admin._apps:
+        firebase_creds = os.getenv("FIREBASE_CREDENTIALS")
+        if firebase_creds:
+            cred_dict = json.loads(firebase_creds)
+            cred = credentials.Certificate(cred_dict)
+            firebase_admin.initialize_app(cred)
+        else:
+            st.error("FIREBASE_CREDENTIALS environment variable not found.")
 
     # Get Firestore database reference
     db = firestore.client()

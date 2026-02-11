@@ -5,8 +5,21 @@ from firebase_admin import credentials
 from firebase_admin import auth
 
 
-cred = credentials.Certificate("Insert Google-api-key.json")
-firebase_admin.initialize_app(cred)
+import os
+import json
+
+# Fetch the service account key JSON file contents
+firebase_creds = os.getenv("FIREBASE_CREDENTIALS")
+
+if firebase_creds:
+    cred_dict = json.loads(firebase_creds)
+    cred = credentials.Certificate(cred_dict)
+    
+    # Check if app is already initialized to avoid ValueError
+    if not firebase_admin._apps:
+        firebase_admin.initialize_app(cred)
+else:
+    st.error("FIREBASE_CREDENTIALS environment variable not found. Please set it in your environment.")
 
 
 def app():
